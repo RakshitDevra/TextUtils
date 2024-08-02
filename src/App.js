@@ -46,7 +46,7 @@ document.title="TextUtils-Dark Mode"
   }
   return (
     <>
-    <Router>
+    <Router basename="/TextUtils>
   <Navbar title='TextUtils' aboutText="About Textutils" mode={mode} togglemode={togglemode}/>
   <Alert alert={alert} />
   <div className="container my-11">
