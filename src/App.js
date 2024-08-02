@@ -57,7 +57,7 @@ document.title="TextUtils-Dark Mode"
            
         
           <Route  path="/" element={ <Textform  heading="Enter the text to analyze" mode={mode} showAlert={showAlert}/>} />
-           
+              <Route  path="/TextUtils" element={ <Textform  heading="Enter the text to analyze" mode={mode} showAlert={showAlert}/>} />
             
           
         </Routes>
