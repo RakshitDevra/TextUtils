@@ -5,7 +5,7 @@ import Textform from './components/Textform';
 import About from './components/About';
 import React,{useState} from 'react';
 import Alert from './components/Alert';
-import { BrowserRouter as Router,Route,Switch } from 'react-router-dom';
+ import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
 
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
 
   }
   const togglemode = () => {
-    if(mode=='light'){
+    if(mode==='light'){
       setMode('dark');
 document.body.style.backgroundColor = 'grey'; 
 showAlert("Dark mode has been enabled","success ")
@@ -51,30 +51,24 @@ document.title="TextUtils-Dark Mode"
   <Alert alert={alert} />
   <div className="container my-11">
   
-  <Switch>   // exact use kiya jisse complete matching ho component ki.
-          <Route exact path="/about">     
-            <About />
-          
-          </Route>
-          <Route exact path="/">
-            <Textform  heading="Enter the text to analyze" mode={mode} showAlert={showAlert}/>
+  <Routes>   
+          <Route path="/about" element={<About mode={mode} />} />     
             
-          </Route>
-        </Switch>
+           
+        
+          <Route  path="/" element={ <Textform  heading="Enter the text to analyze" mode={mode} showAlert={showAlert}/>} />
+           
+            
+          
+        </Routes>
         </div>
-        </Router>
-      
-          
-  
-          
-      
-        -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+       </Router>
     
     
   
 </>
 
-  );
+  ); 
 }
 
 export default App;
