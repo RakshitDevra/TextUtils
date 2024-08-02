@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+t import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar';
 import Textform from './components/Textform';
@@ -57,7 +57,7 @@ document.title="TextUtils-Dark Mode"
            
         
           <Route  path="/" element={ <Textform  heading="Enter the text to analyze" mode={mode} showAlert={showAlert}/>} />
-              <Route  path="/TextUtils" element={ <Textform  heading="Enter the text to analyze" mode={mode} showAlert={showAlert}/>} />
+              <Route exact path="/TextUtils" element={ <Textform  heading="Enter the text to analyze" mode={mode} showAlert={showAlert}/>} />
             
           
         </Routes>
